@@ -1,0 +1,38 @@
+{
+	"dailyingestion": {
+		"dbconfig": {
+			"user": "DB_USER",
+			"password": "DB_PASSWORD",
+			"database": "DB_DATABASE",
+			"schema": "DB_SCHEMA",
+			"port": "DB_PORT",
+			"host": "DB_HOST",
+			"ssl": {
+				"ca": "DB_SSL_CA",
+				"key": "DB_SSL_KEY",
+				"cert": "DB_SSL_CERT"
+			}
+		},
+		"smtpconfig": {
+			"port": "SMTP_PORT",
+			"host": "SMTP_HOST"
+		},
+		"directory-monitor": {
+			"rootpath": "FP_ROOT"
+		},
+		"move-manager": {
+			"rootpath": "FP_ROOT"
+		},
+		"audit-manager": {
+			"nuxeobaseurl": "NUX_BASE_URL",
+			"nuxeousername": "NUX_USERNAME",
+			"nuxeopassword": "NUX_PASSWORD",
+			"node_env": "NODE_ENV"
+		},
+		"gcpConfig": {
+			"projectId": "GCP_PROJECTID",
+			"keyFilename": "GCP_KEYFILENAME",
+			"bucketNames": "GCP_BUCKETS"
+		}
+	}
+}

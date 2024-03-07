@@ -1,0 +1,41 @@
+{
+  "monitoredfolders": [
+    {
+      "monitorpath": "./testing/data/folder",
+      "inTestMode": false,
+      "save": "./testing/data/docOrigin",
+      "movetopath": "./testing/data/toNuxeo",
+      "moveerrorpath": "./testing/data/moveError",
+      "handler": "docorigin-preprocess",
+      "documenttypes": [
+        {
+          "description": "AR Consolidated Statements",
+          "filenameprefix": "ARJconsol",
+          "dbtablename": "daily_mms-arcons-statements",
+          "movetopath": "./testing/data/toNuxeo",
+          "pdfpath": "./testing/data/toNuxeo/PDFTemp/ARJconsol",
+          "moveerrorpath": "./testing/data/moveError",
+          "copytopath": "./testing/data/toWebcenter",
+          "copyerrorpath": "./testing/data/copyError",
+          "holdFolder": "./testing/data/holding",
+          "rcloneFolder": "./testing/data/toNuxeo/rClone/default/daily_mms-arcons-statements",
+          "holdfolderpattern": "y-LL-dd",
+          "finalM_Status": "MOVE_READY",
+          "metadatacolumnheaders": [
+            "AppendPage",
+            "FilePath",
+            "CustomerName",
+            "AccountNumber",
+            "StatementDate",
+            "StatementNumber",
+            "Ignore"
+          ],
+          "handler": "mms-arsco",
+          "repository": "Default",
+          "enabled": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}

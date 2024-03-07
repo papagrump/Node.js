@@ -1,0 +1,14 @@
+{
+  "dailyingestion": {
+    "directory-monitor": {
+      "rootpath": "",
+      "monitoredfoldersconfig": "./testing/config/monitored-folders.json",
+      "fileprocessorspath": "./fileprocessors/",
+      "reloadIntervalms": 2000
+    },
+    "logger": {
+      "console": true,
+      "transports": []
+    }
+  }
+}

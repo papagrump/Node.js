@@ -1,0 +1,61 @@
+{
+	"monitoredfolders": [
+		{
+			"description": "Bill Of Lading",
+			"monitorpath": "D:/DailyIngest/FromBOL",
+			"save": "//icp-001/DailyIngest/FromBOL",
+			"movetopath": "/ToNuxeo/Input/billoflading",
+			"moveerrorpath": "/FromBOL/moveerror",
+			"holdFolder": "/ToNuxeo/Holding/bol",
+			"holdfolderpattern": "y-LL-dd",
+			"rcloneFolder": "/ToNuxeo/rClone/default/daily_billoflading",
+			"handler": "mms-bol",
+			"finalM_Status": "CREATE_READY",
+			"dbtablename": "daily_billoflading",
+			"repository": "Default",
+			"enabled": true
+		},
+		{
+			"description": "MMS PackingSlips",
+			"monitorpath": "D:/DailyIngest/FromDocOrigin/PackingSlips",
+			"movetopath": "/ToNuxeo/Input/Packingslips",
+			"moveerrorpath": "/FromDocOrigin/PackingSlips/moveerror",
+			"holdFolder": "/ToNuxeo/Holding/packingslips",
+			"holdfolderpattern": "y-LL-dd_HH",
+			"rcloneFolder": "/ToNuxeo/rClone/default/daily_packingslips",
+			"handler": "mms-packslip",
+			"finalM_Status": "CREATE_READY",
+			"dbtablename": "daily_mms-packingslips",
+			"repository": "Packing Slip Archive",
+			"enabled": true
+		},
+		{
+			"description": "MMS AP Reports",
+			"monitorpath": "D:/DailyIngest/FromDocOrigin/MMSApReports",
+			"movetopath": "/ToNuxeo/Input/apreports",
+			"moveerrorpath": "/FromDocOrigin/MMSApReports/moveerror",
+			"holdFolder": "/ToNuxeo/Holding/apreports",
+			"holdfolderpattern": "y-LL-dd_HH",
+			"rcloneFolder": "/ToNuxeo/rClone/default/daily_apreports",
+			"handler": "mms-apreports",
+			"finalM_Status": "CREATE_READY",
+			"dbtablename": "daily_mms-apreports",
+			"repository": "Default",
+			"enabled": true
+		},
+		{
+			"description": "MMS AR Reports",
+			"monitorpath": "D:/DailyIngest/FromDocOrigin/ARTreasuryReports",
+			"movetopath": "/ToNuxeo/Input/arreports",
+			"moveerrorpath": "/FromDocOrigin/MMSArReports/moveerror",
+			"holdFolder": "/ToNuxeo/Holding/arreports",
+			"holdfolderpattern": "y-LL-dd_HH",
+			"rcloneFolder": "/ToNuxeo/rClone/default/daily_arreports",
+			"handler": "mms-arreports",
+			"finalM_Status": "CREATE_READY",
+			"dbtablename": "daily_mms-arreports",
+			"repository": "Default",
+			"enabled": true
+		}
+	]
+}

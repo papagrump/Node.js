@@ -1,0 +1,82 @@
+{
+	"name": "dailyingest",
+	"version": "0.1.1",
+	"description": "Daily Ingestion Code",
+	"main": "DailyIngest.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node ./app.js",
+		"sm": "node ./test-sm.js",
+		"start-mon": "nodemon ./app.js",
+		"dm": "node -r dotenv/config ./directory-monitor/directory-monitor-single.js --max-old-space-size=4096 --trace-warnings --unhandled-rejections=strict",
+		"dm2": "node -r dotenv/config ./directory-monitor/directory-monitor-docorigin.js --max-old-space-size=4096 --trace-warnings --unhandled-rejections=strict",
+		"am": "node -r dotenv/config ./audit-manager/auditprocessors/bol-audit.js --trace-warnings --unhandled-rejections=strict",
+		"audit-check": "node -r dotenv/config ./audit-manager/auditprocessors/audit-query.js --trace-warnings --unhandled-rejections=strict",
+		"dm-nm": "nodemon -r dotenv/config ./directory-monitor/directory-monitor.js --max-old-space-size=4096 --trace-warnings --unhandled-rejections=strict",
+		"gcp-reprocess": "node -r dotenv/config ./tools/gcp-error-reprocess.js",
+		"movebol": "node -r  dotenv/config ./tools/movebol.js",
+		"test-dm": "env NODE_ENV=test NODE_CONFIG_DIR=./testing/config WORK_ONCE=true node ./testing/directory-monitor.test.js"
+	},
+	"contributors": [
+		{
+			"name": "Paul Adamson",
+			"email": "paul.adamson@mckesson.com"
+		},
+		{
+			"name": "Sarah Evjen",
+			"email": "sarah.evejen@mckesson.com"
+		},
+		{
+			"name": "Aravind Tummalapally",
+			"email": "aravind.tummalapally@mckesson.com"
+		},
+		{
+			"name": "Robert Morley",
+			"email": "robert.morley@mckesson.com"
+		}
+	],
+	"license": "ISC",
+	"dependencies": {
+		"@google-cloud/storage": "^5.14.0",
+		"async": "^3.2.1",
+		"async-parallel-foreach": "^1.0.1",
+		"chokidar": "^3.5.2",
+		"concat-stream": "^2.0.0",
+		"config": "^3.3.6",
+		"delimited-file-reader": "^1.0.7",
+		"duplexify": "^4.1.2",
+		"event-stream": "^4.0.1",
+		"express": "^4.17.1",
+		"fast-mhtml": "^1.1.9",
+		"find-remove": "^3.1.0",
+		"fs-extra": "^10.0.0",
+		"jsdom": "^18.0.0",
+		"JSONStream": "^1.3.5",
+		"klaw": "^3.0.0",
+		"luxon": "^2.0.2",
+		"md5-file": "^5.0.0",
+		"mhtml": "^0.1.2",
+		"mhtml2html": "^3.0.0",
+		"nodemailer": "^6.6.3",
+		"nuxeo": "^3.18.0",
+		"p-queue": "^7.1.0",
+		"pg": "^8.7.1",
+		"promise-queue": "^2.2.5",
+		"pug": "^3.0.2",
+		"request": "^2.88.2",
+		"stream-json": "^1.7.2",
+		"through2": "^4.0.2",
+		"uuid": "^8.3.2",
+		"winston": "^3.3.3",
+		"winston-daily-rotate-file": "^4.5.5",
+		"yauzl": "^2.10.0"
+	},
+	"devDependencies": {
+		"@types/chokidar": "^2.1.3",
+		"@types/fs-extra": "^9.0.13",
+		"@types/promise-queue": "^2.2.0",
+		"dotenv": "^10.0.0",
+		"eslint": "^7.32.0",
+		"nodemon": "^2.0.12"
+	}
+}

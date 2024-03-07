@@ -1,0 +1,24 @@
+
+doctype html
+html
+head
+title=title
+body
+    h1 Monitored Folders
+
+    ul
+        each value in folderList
+            li=`${value}`
+
+input(
+  type='checkbox'
+  name='Enabled Only'
+  checked
+)
+
+- var btnType = 'info'
+- var btnSize = 'lg'
+button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize)
+|
+|
+button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)

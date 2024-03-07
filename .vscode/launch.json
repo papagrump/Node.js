@@ -1,0 +1,46 @@
+{
+	"configurations": [
+		{
+			"type": "node-terminal",
+			"name": "Run Script: dm",
+			"request": "launch",
+			"command": "npm run dm",
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: dm2",
+			"request": "launch",
+			"command": "npm run dm2",
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: dm-nm",
+			"request": "launch",
+			"command": "npm run dm-nm",
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: movebol",
+			"request": "launch",
+			"command": "npm run movebol",
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: audit-check",
+			"request": "launch",
+			"command": "npm run audit-check",
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "node-terminal",
+			"name": "Run Script: gcp-reprocess",
+			"request": "launch",
+			"command": "npm run gcp-reprocess",
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

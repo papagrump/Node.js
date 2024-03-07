@@ -1,0 +1,91 @@
+{
+	"dailyingestion": {
+		"dbconfig": {
+			"user": "",
+			"password": "",
+			"database": "",
+			"schema": "",
+			"port": "",
+			"host": "",
+			"ssl": {
+				"sslmode": "verify-ca",
+				"rejectunauthorized": false,
+				"ca": "",
+				"key": "",
+				"cert": ""
+			}
+		},
+		"smtpconfig": {
+			"port": "",
+			"host": ""
+		},
+		"logger": {
+			"transports": [
+				{
+					"filepath": "./logs/daily-ingestion-combined.log",
+					"datePattern": "YYYY-MM-DD",
+					"zippedArchive": true,
+					"maxSize": "10m",
+					"level": "info",
+					"daystokeep": "30d",
+					"handleExceptions": false,
+					"enabled": true
+				},
+				{
+					"filepath": "./logs/daily-ingestion-error.log",
+					"datePattern": "YYYY-MM-DD",
+					"zippedArchive": true,
+					"maxSize": "10m",
+					"level": "error",
+					"daystokeep": "30d",
+					"handleExceptions": true,
+					"enabled": true
+				},
+				{
+					"filepath": "./logs/daily-ingestion-debug.log",
+					"datePattern": "YYYY-MM-DD",
+					"zippedArchive": true,
+					"maxSize": "10m",
+					"level": "debug",
+					"daystokeep": "30d",
+					"handleExceptions": true,
+					"enabled": true
+				}
+			]
+		},
+		"directory-monitor": {
+			"rootpath": "",
+			"monitoredfoldersconfig2": "./config/monitored-folders-docorigin.json",
+			"monitoredfoldersconfig": "./config/monitored-folders-single.json",
+			"fileprocessorspath": "./fileprocessors/",
+			"reloadIntervalms": "120000"
+		},
+		"move-manager": {
+			"rootpath": "",
+			"reloadIntervalms": "120000"
+		},
+		"move-dat-manager": {
+			"rootpath": "",
+			"fromPath": "/ToWebCenter/DATTemp",
+			"toPath": "/ToWebCenter/Input",
+			"runIntervalms": "120000"
+		},
+		"audit-manager": {
+			"nuxeobaseurl": "",
+			"nuxeousername": "",
+			"nuxeopassword": "",
+			"node_env": "",
+			"BOL": {
+				"from": "daily-ingestion@mckesson.com",
+				"successtolist": "paul.adamson@mckesson.com, Brian.Davey@McKesson.com, sarah.evjen@mckesson.com, robert.morley@mckesson.com",
+				"noresultstolist": "paul.adamson@mckesson.com, sarah.evjen@mckesson.com, robert.morley@mckesson.com"
+			}
+		},
+		"gcpConfig": {
+			"projectId": "",
+			"keyFilename": "",
+			"bucketNames": ""
+		},
+		"fileprocessor": {}
+	}
+}
